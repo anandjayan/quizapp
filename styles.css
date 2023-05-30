@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right bottom, #08203e, #557c93);
+    color: white;
+    display: grid; 
+    justify-content: center;  
+    align-items: center; 
+
+}
+
+.alert{
+    display: grid;
+    justify-content: center;  
+    align-items: center; 
+    background-color: #02fe1f;
+    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 0;
+    display: none;
+
+}
+
+.container{
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+
+.container h1{
+font-size: 50px;
+margin-bottom: 40px;
+text-decoration: underline;
+text-underline-offset: 8px; /*gap from underline*/ 
+}
+
+
+.container .question{
+font-size: 40px;
+margin-top: 20px;
+
+}
+
+.container .choices{
+margin-top: 20px;
+}
+
+.choice{
+    font-size: 20px;
+    background-color: white;
+    color:black;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50%);
+    animation: fade-in 0.5s ease forwards;
+}
+
+.choice:hover{
+    background-color: #cae3f2;
+}
+
+.btn{
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px;
+    font-weight: 600;
+    margin: 20px auto 0 auto;
+    background-color: green;
+    color: azure;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.btn:hover{
+    background-color: rgb(8, 198, 8);
+
+}
+
+.choice.selected{
+    background-color: aqua;
+
+}
+
+.scoreCard{
+    font-size: 30px;
+    margin-top: 25px;
+
+}
+
+.startBtn{
+    width: 100%;
+}
+
+.timer{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50px;
+    background-color: #08203e;
+    font-size: 25px;
+    font-weight: 600;
+    border: 2px solid red;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 1s ease-in-out infinite;  
+}
+
+   /* animation to timer  pulse is just a name  */
+
+   @keyframes pulse{
+       0%{
+        transform: scale(1);
+       }
+       50%{
+        transform: scale(1.2);
+       }
+       100%{
+        transform: scale(1);
+       }
+
+
+   }
+
+   /* animations to choices  */
+   @keyframes fade-in{
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+   }
+
+@media screen and (max-width:900px){
+    .container {
+        width: 100%;
+        margin-top: 50%;
+    }
+    .container h1{
+        font-size: 25px;
+
+    }
+    .container.question{
+        font-size: 22px;
+    }
+    .timer{
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+
+    }
+
+    .startBtn{
+        width: 50%;
+    }
+}
